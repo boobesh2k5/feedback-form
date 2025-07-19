@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Collector</title>
+  <style>
+    :root {
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --light: #f8f9fa;
+      --dark: #212529;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #f5f7fa;
+    }
+    
+    h1 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .form-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+    
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    
+    input[type="text"]:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.25);
+    }
+    
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: var(--secondary);
+    }
+    
+    .rating-options {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .rating-option {
+      flex: 1;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Share Your Feedback</h1>
+    
+    <form action="/submit" method="POST">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your name">
+      </div>
+      
+      <div class="form-group">
+        <label for="feedback">Your Feedback</label>
+        <textarea 
+          id="feedback" 
+          name="feedback" 
+          required 
+          placeholder="Please share your detailed feedback here..."
+          minlength="20"
+        ></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label>Rating</label>
+        <div class="rating-options">
+          <div class="rating-option">
+            <input type="radio" id="rating-5" name="rating" value="5" required>
+            <label for="rating-5">⭐️⭐️⭐️⭐️⭐️</label>
+          </div>
+          <div class="rating-option">
+            <input type="radio" id="rating-4" name="rating" value="4">
+            <label for="rating-4">⭐️⭐️⭐️⭐️</label>
+          </div>
+          <div class="rating-option">
+            <input type="radio" id="rating-3" name="rating" value="3">
+            <label for="rating-3">⭐️⭐️⭐️</label>
+          </div>
+          <div class="rating-option">
+            <input type="radio" id="rating-2" name="rating" value="2">
+            <label for="rating-2">⭐️⭐️</label>
+          </div>
+          <div class="rating-option">
+            <input type="radio" id="rating-1" name="rating" value="1">
+            <label for="rating-1">⭐️</label>
+          </div>
+        </div>
+      </div>
+      
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+</body>
+<p>&copy; Created By Boobesh</p>
+
+
+</html>
